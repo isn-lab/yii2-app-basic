@@ -64,9 +64,11 @@
     }
   },
   "repositories": [
-    {
-      "type": "composer",
-      "url": "http://composer.isnlab.com/"
-    }
+    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/admin" },
+    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/auth" },
+    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/common" },
+    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-menu" },
+    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-uploader" },
+    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-content" }
   ]
 }
