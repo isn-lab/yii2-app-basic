@@ -28,7 +28,8 @@
     "isnlab/yii2-isn-mod-menu": "@dev",
     "isnlab/yii2-isn-mod-files": "@dev",
     "isnlab/yii2-isn-admin": "@dev",
-    "isnlab/yii2-isn-mod-content": "@dev"
+    "isnlab/yii2-isn-mod-content": "@dev",
+    "isnlab/yii2-isn-mod-commerce": "@dev"
   },
   "require-dev": {
     "yiisoft/yii2-codeception": "*",
@@ -69,6 +70,7 @@
     { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/common" },
     { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-menu" },
     { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-uploader" },
-    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-content" }
+    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-content" },
+    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-commerce" }
   ]
 }
