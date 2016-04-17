@@ -52,7 +52,9 @@
         {
           "runtime": "0777",
           "web/assets": "0777",
-          "yii": "0755"
+          "yii": "0755",
+          "isn_install.cmd": "0755",
+          "isn_install.sh": "0755"
         }
       ],
       "generateCookieValidationKey": [

@@ -1,0 +1,1 @@
+Folder to stored images theme files
