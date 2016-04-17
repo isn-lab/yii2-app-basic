@@ -24,11 +24,6 @@ $config = [
         ],
         'db' => $db,
     ],
-	'controllerMap'  => [
-		'isn' => [
-			'class' => 'isnlab\common\commands\IsnController',
-		],
-	],
     'params' => $params,
     /*
     'controllerMap' => [
