@@ -1,1 +1,0 @@
-Folder to stored JavaScript theme files

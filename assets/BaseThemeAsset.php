@@ -17,7 +17,7 @@
         //public $baseUrl = '@web';
     
         public $css = [
-            //'css/style.css',
+            'css/style.css',
         ];
         public $js = [
             //'js/js.min.js',

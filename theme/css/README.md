@@ -1,1 +1,0 @@
-Folder to stored css theme files
