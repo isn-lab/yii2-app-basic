@@ -1,7 +1,7 @@
 ISN Install
 ===========
 
-    composer create-project --stability=dev isnlab/yii2-app-basic main
+    composer create-project --stability=dev isn-lab/yii2-app-basic main
 
 Yii 2 Basic Project Template
 ============================
