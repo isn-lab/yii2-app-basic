@@ -27,4 +27,12 @@ class AppAsset extends AssetBundle
         'yii\bootstrap\BootstrapAsset',
         'app\assets\BaseThemeAsset'
     ];
+
+	public static function register($view)
+	{
+		//<link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+		$view->registerLinkTag(['rel'=>'shortcut icon', 'href' => '/favicon.png', 'type' => 'image/png']);
+
+		return parent::register($view);
+	}
 }
