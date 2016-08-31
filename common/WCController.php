@@ -10,10 +10,8 @@
 
 	use isnlab\auth\common\CController;
 	use Yii;
-	use yii\base\Exception;
-	use yii\base\UserException;
-	use yii\web\HttpException;
 
 	class WCController extends CController {
+
 
 	}

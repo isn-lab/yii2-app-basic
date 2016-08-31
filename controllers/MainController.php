@@ -10,29 +10,18 @@
 	use yii\filters\VerbFilter;
 	use app\models\ContactForm;
 
-	class SiteController extends WCController
+	class MainController extends WCController
 	{
 		public function behaviors()
 		{
-			return [
-				'access' => [
-					'class' => AccessControl::className(),
-					'only' => ['logout'],
-					'rules' => [
-						[
-							'actions' => ['logout'],
-							'allow' => true,
-							'roles' => ['@'],
-						],
-					],
-				],
+			return array_merge([
 				'verbs' => [
 					'class' => VerbFilter::className(),
 					'actions' => [
 						'logout' => ['post'],
 					],
 				],
-			];
+			], parent::behaviors());
 		}
 
 		public function actions()
