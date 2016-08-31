@@ -28,7 +28,8 @@
     "isnlab/yii2-isn-admin": "dev-master",
     "isnlab/yii2-isn-mod-files": "dev-master",
     "isnlab/yii2-isn-mod-menu": "dev-master",
-    "isnlab/yii2-isn-mod-content": "dev-master"
+    "isnlab/yii2-isn-mod-content": "dev-master",
+    "isnlab/yii2-isn-mod-commerce": "dev-master"
   },
   "require-dev": {
     "codeception/codeception" : ">=2.0.4",

@@ -11,13 +11,13 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'k-zByS1xpXFUtwRjXpkmgMWv1COpnTFg',
         ],
-        'cache' => [
-            'class' => 'yii\caching\FileCache',
-        ],
-        'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
-        ],
+        /* 'cache' => [
+			 'class' => 'yii\caching\FileCache',
+		 ],
+		 /*'user' => [
+			 dentityClass' => 'app\models\User',
+			 'enableAutoLogin' => true,
+		 ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
@@ -27,7 +27,7 @@ $config = [
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
             'useFileTransport' => true,
-        ],
+        ],*/
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

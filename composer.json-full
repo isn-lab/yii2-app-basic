@@ -23,13 +23,13 @@
     "yiisoft/yii2": ">=2.0.5",
     "yiisoft/yii2-bootstrap": "*",
     "yiisoft/yii2-swiftmailer": "*",
-    "isnlab/yii2-isn-common": "dev-trunk",
-    "isnlab/yii2-isn-auth": "dev-trunk",
-    "isnlab/yii2-isn-mod-menu": "dev-trunk",
-    "isnlab/yii2-isn-mod-files": "dev-trunk",
-    "isnlab/yii2-isn-admin": "dev-trunk",
-    "isnlab/yii2-isn-mod-content": "dev-trunk",
-    "isnlab/yii2-isn-mod-commerce": "dev-trunk"
+    "isnlab/yii2-isn-common": "dev-master",
+    "isnlab/yii2-isn-auth": "dev-master",
+    "isnlab/yii2-isn-mod-menu": "dev-master",
+    "isnlab/yii2-isn-mod-files": "dev-master",
+    "isnlab/yii2-isn-admin": "dev-master",
+    "isnlab/yii2-isn-mod-content": "dev-master",
+    "isnlab/yii2-isn-mod-commerce": "dev-master"
   },
   "require-dev": {
     "codeception/codeception" : ">=2.0.4",
