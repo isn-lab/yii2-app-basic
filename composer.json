@@ -24,12 +24,7 @@
     "yiisoft/yii2-bootstrap": "*",
     "yiisoft/yii2-swiftmailer": "*",
     "isnlab/yii2-isn-common": "dev-master",
-    "isnlab/yii2-isn-auth": "dev-master",
-    "isnlab/yii2-isn-admin": "dev-master",
-    "isnlab/yii2-isn-mod-files": "dev-master",
-    "isnlab/yii2-isn-mod-menu": "dev-master",
-    "isnlab/yii2-isn-mod-content": "dev-master",
-    "isnlab/yii2-isn-mod-commerce": "dev-master"
+    "isnlab/yii2-isn-auth": "dev-master"
   },
   "require-dev": {
     "codeception/codeception" : ">=2.0.4",
@@ -46,7 +41,8 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "yii\\composer\\Installer::postCreateProject"
+      "yii\\composer\\Installer::postCreateProject",
+      "isnlab\\common\\composer\\Installer::postCreateProject"
     ]
   },
   "extra": {
@@ -71,11 +67,6 @@
   },
   "repositories": [
     { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/admin" },
-    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/auth" },
-    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/common" },
-    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-menu" },
-    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-uploader" },
-    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-content" },
-    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/mod-commerce" }
+    { "type": "vcs", "url": "https://svn.isnlab.com/repos/isnlab_packages/yii2/auth" }
   ]
 }
