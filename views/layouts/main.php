@@ -34,25 +34,23 @@
 			              ],
 		              ]);
 		echo Nav::widget([
-			                 'options' => ['class' => 'navbar-nav navbar-right'],
-			                 'items' => [
-				                 ['label' => 'Home', 'url' => ['/main/index']],
-				                 ['label' => 'About', 'url' => ['/main/about']],
-				                 ['label' => 'Contact', 'url' => ['/main/contact']],
-				                 Yii::$app->user->isGuest ? (
-				                 ['label' => 'Login', 'url' => ['/main/login']]
-				                 ) : (
-					                 '<li>'
-					                 . Html::beginForm(['/main/logout'], 'post')
-					                 . Html::submitButton(
-						                 'Logout (' . Yii::$app->user->identity->user_name . ')',
-						                 ['class' => 'btn btn-link']
-					                 )
-					                 . Html::endForm()
-					                 . '</li>'
-				                 )
-			                 ],
-		                 ]);
+							 'options' => ['class' => 'navbar-nav navbar-right'],
+							 'items' => [
+								 ['label' => 'Home', 'url' => ['/main/index']],
+								 ['label' => 'Twig', 'url' => ['/main/twig']],
+								 ['label' => 'About', 'url' => ['/main/about']],
+								 ['label' => 'Contact', 'url' => ['/main/contact']],
+								 ['label' => 'Admin', 'url' => [ADMIN_ALIAS.'/main'], 'visible'=> !Yii::$app->user->isGuest],
+								 ['label' => 'Registration', 'url' => ['/'.REGISTRATION_ALIAS], 'visible'=> Yii::$app->user->isGuest],
+								 Yii::$app->user->isGuest ?
+									 ['label' => 'Login', 'url' => ['/main/login']] :
+									 [
+										 'label' => 'Logout (' . Yii::$app->user->identity->user_name . ')',
+										 'url' => ['/main/logout'],
+										 'linkOptions' => ['data-method' => 'post']
+									 ],
+							 ],
+						 ]);
 		NavBar::end();
 	?>
 
