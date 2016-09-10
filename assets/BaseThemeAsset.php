@@ -32,6 +32,7 @@
             'yii\web\JqueryAsset',
             'yii\web\YiiAsset',
             'yii\bootstrap\BootstrapAsset',
+            'yii\bootstrap\BootstrapPluginAsset',
             'isnlab\common\assets\CommonWebAsset',
             'isnlab\common\assets\MagnificPopupAsset',
         ];
