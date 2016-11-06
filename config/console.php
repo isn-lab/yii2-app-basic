@@ -12,7 +12,13 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
+    'timeZone'   => 'Europe/Moscow',
     'components' => [
+	    'formatter'            => [
+		    'dateFormat'     => 'd.MM.Y',
+		    'timeFormat'     => 'H:mm:ss',
+		    'datetimeFormat' => 'd.MM.Y H:mm',
+	    ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
