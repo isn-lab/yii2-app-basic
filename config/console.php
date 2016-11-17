@@ -37,13 +37,13 @@ $config = [
         'db' => $db,
     ],
     'params' => $params,
-    /*
+
     'controllerMap' => [
-        'fixture' => [ // Fixture generation command line.
-            'class' => 'yii\faker\FixtureController',
+        'migrate' => [ // Fixture generation command line.
+			'class'=>'isnlab\common\commands\IsnBaseMigrateController',
         ],
     ],
-    */
+
 ];
 
 if (YII_ENV_DEV) {
