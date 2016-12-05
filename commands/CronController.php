@@ -8,7 +8,7 @@
 	 */
 	namespace app\commands;
 
-	class CronController extends isnlab\common\commands\CronController
+	class CronController extends \isnlab\common\commands\CronController
 	{}
 
 
