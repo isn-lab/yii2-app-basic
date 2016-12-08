@@ -11,7 +11,28 @@
 	use isnlab\auth\common\CController;
 	use Yii;
 
+	/**
+	 * Class WCController
+	 * @package app\common
+	 */
 	class WCController extends CController {
+
+		/**
+		 * @var bool
+		 */
+		public $isHome = false;
+		/**
+		 * @var bool
+		 */
+		public $showBreadCrumbs = true;
+		/**
+		 * @var bool
+		 */
+		public $showFooter = true;
+		/**
+		 * @var bool
+		 */
+		public $showSlider = false;
 
 
 	}

@@ -2,6 +2,7 @@
 
 	/* @var $this \yii\web\View */
 	/* @var $content string */
+	/** @var $controller \app\common\WCController */
 
 	use yii\helpers\Html;
 	use yii\bootstrap\Nav;
@@ -10,6 +11,7 @@
 	use app\assets\AppAsset;
 
 	AppAsset::register($this);
+	$controller = Yii::$app->controller;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -25,50 +27,20 @@
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-	<?php
-		NavBar::begin([
-			              'brandLabel' => 'My Company',
-			              'brandUrl' => Yii::$app->homeUrl,
-			              'options' => [
-				              'class' => 'navbar-inverse navbar-fixed-top',
-			              ],
-		              ]);
-		echo Nav::widget([
-							 'options' => ['class' => 'navbar-nav navbar-right'],
-							 'items' => [
-								 ['label' => 'Home', 'url' => ['/main/index']],
-								 ['label' => 'Twig', 'url' => ['/main/twig']],
-								 ['label' => 'About', 'url' => ['/main/about']],
-								 ['label' => 'Contact', 'url' => ['/main/contact']],
-								 ['label' => 'Admin', 'url' => [ADMIN_ALIAS.'/main'], 'visible'=> !Yii::$app->user->isGuest],
-								 ['label' => 'Registration', 'url' => ['/'.REGISTRATION_ALIAS], 'visible'=> Yii::$app->user->isGuest],
-								 Yii::$app->user->isGuest ?
-									 ['label' => 'Login', 'url' => ['/main/login']] :
-									 [
-										 'label' => 'Logout (' . Yii::$app->user->identity->user_name . ')',
-										 'url' => ['/main/logout'],
-										 'linkOptions' => ['data-method' => 'post']
-									 ],
-							 ],
-						 ]);
-		NavBar::end();
-	?>
+
+	<?= $this->render('header', $this->params) ?>
+
+	<?= ($controller->showSlider) ? $this->render('slider', $this->params) : '' ?>
 
 	<div class="container">
-		<?= Breadcrumbs::widget([
+		<?= ($controller->showBreadCrumbs) ? Breadcrumbs::widget([
 			                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-		                        ]) ?>
+		                        ]) : '' ?>
 		<?= $content ?>
 	</div>
 </div>
 
-<footer class="footer">
-	<div class="container">
-		<p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-		<p class="pull-right"><?= Yii::powered() ?></p>
-	</div>
-</footer>
+<?= ($controller->showFooter) ? $this->render('footer') : ''; ?>
 
 <?php $this->endBody() ?>
 </body>
