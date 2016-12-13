@@ -1,63 +1,77 @@
 <?php
 
-namespace app\models;
+	namespace app\models;
 
-use Yii;
-use yii\base\Model;
+	use isnlab\common\CommonFunc;
+	use isnlab\common\services\swift\MailerService;
+	use Yii;
+	use yii\base\Model;
+	use yii\swiftmailer\Mailer;
 
-/**
- * ContactForm is the model behind the contact form.
- */
-class ContactForm extends Model
-{
-    public $name;
-    public $email;
-    public $subject;
-    public $body;
-    public $verifyCode;
+	/**
+	 * ContactForm is the model behind the contact form.
+	 */
+	class ContactForm extends Model
+	{
+		public $name;
+		public $email;
+		public $subject;
+		public $body;
+		public $verifyCode;
 
-    /**
-     * @return array the validation rules.
-     */
-    public function rules()
-    {
-        return [
-            // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
-            // email has to be a valid email address
-            ['email', 'email'],
-            // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha', 'captchaAction' => 'main/captcha'],
-        ];
-    }
+		/**
+		 * @return array the validation rules.
+		 */
+		public function rules()
+		{
+			return [
+				// name, email, subject and body are required
+				[['name', 'email', 'subject', 'body'], 'required'],
+				// email has to be a valid email address
+				['email', 'email'],
+				// verifyCode needs to be entered correctly
+				['verifyCode', 'captcha', 'captchaAction' => 'main/captcha',],
+			];
+		}
 
-    /**
-     * @return array customized attribute labels
-     */
-    public function attributeLabels()
-    {
-        return [
-            'verifyCode' => 'Verification Code',
-        ];
-    }
+		/**
+		 * @return array customized attribute labels
+		 */
+		public function attributeLabels()
+		{
+			return [
+				'verifyCode' => 'Проверочный код',
+				'name' => 'Ваше имя',
+				'email' => 'E-Mail',
+				'subject' => 'Тема',
+				'body' => 'Сообщение',
+			];
+		}
 
-    /**
-     * Sends an email to the specified email address using the information collected by this model.
-     * @param  string  $email the target email address
-     * @return boolean whether the model passes validation
-     */
-    public function contact($email)
-    {
-        if ($this->validate()) {
-            Yii::$app->mailer->compose()
-                ->setTo($email)
-                ->setFrom([$this->email => $this->name])
-                ->setSubject($this->subject)
-                ->setTextBody($this->body)
-                ->send();
+		/**
+		 * Sends an email to the specified email address using the information collected by this model.
+		 * @return boolean whether the model passes validation
+		 */
+		public function contact()
+		{
 
-            return true;
-        }
-        return false;
-    }
-}
+			if ($this->validate()) {
+
+				$email = Yii::$app->params['adminEmail'];
+				$fromEmail = Yii::$app->params['fromEmail'];
+
+				/** @var Mailer $mailer */
+				$mailer = CommonFunc::getValidatedService(MailerService::className());
+
+				$mailer->compose('contact', ['model' => $this])
+				       ->setTo($email)
+					//->setFrom($fromEmail)
+					   ->setSubject($this->subject)
+//                ->setTextBody($this->body)
+                       ->send();
+
+				return true;
+			}
+			return false;
+		}
+	}
