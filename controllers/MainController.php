@@ -10,26 +10,33 @@
 	use yii\filters\VerbFilter;
 	use app\models\ContactForm;
 
+	/**
+	 * Class MainController
+	 * @package app\controllers
+	 */
 	class MainController extends WCController
 	{
-		public function behaviors()
+		/**
+		 * @return array
+		 */
+		public function appendBehaviors()
 		{
-			return array_merge([
+			return [
 				'verbs' => [
 					'class' => VerbFilter::className(),
 					'actions' => [
 						'logout' => ['post'],
 					],
 				],
-			], parent::behaviors());
+			];
 		}
 
-		public function actions()
+		/**
+		 * @return array
+		 */
+		public function appendActions()
 		{
 			return [
-				'error' => [
-					'class' => 'yii\web\ErrorAction',
-				],
 				'captcha' => [
 					'class' => 'yii\captcha\CaptchaAction',
 					'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
@@ -37,11 +44,17 @@
 			];
 		}
 
+		/**
+		 * @return mixed
+		 */
 		public function actionIndex()
 		{
 			return $this->render('index');
 		}
 
+		/**
+		 * @return mixed
+		 */
 		public function actionLogin()
 		{
 			if (!\Yii::$app->user->isGuest) {
@@ -57,6 +70,9 @@
 			]);
 		}
 
+		/**
+		 * @return mixed
+		 */
 		public function actionLogout()
 		{
 			Yii::$app->user->logout();
@@ -64,6 +80,9 @@
 			return $this->goHome();
 		}
 
+		/**
+		 * @return mixed
+		 */
 		public function actionContact()
 		{
 			$model = new ContactForm();
@@ -77,6 +96,9 @@
 			]);
 		}
 
+		/**
+		 * @return mixed
+		 */
 		public function actionAbout()
 		{
 			return $this->render('about');

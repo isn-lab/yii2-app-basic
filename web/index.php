@@ -4,7 +4,7 @@
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'dev');
 
-	//$info_title = 'Информация'; $info_text = 'Сайт временно недоступен. проводятся технические работы. Время работ 10-20 минут.';
+	//$info_title = 'РРЅС„РѕСЂРјР°С†РёСЏ'; $info_text = 'РЎР°Р№С‚ РІСЂРµРјРµРЅРЅРѕ РЅРµРґРѕСЃС‚СѓРїРµРЅ. РїСЂРѕРІРѕРґСЏС‚СЃСЏ С‚РµС…РЅРёС‡РµСЃРєРёРµ СЂР°Р±РѕС‚С‹. Р’СЂРµРјСЏ СЂР°Р±РѕС‚ 10-20 РјРёРЅСѓС‚.';
 	//require_once('info.php'); die();
 
 require(__DIR__ . '/../vendor/autoload.php');
