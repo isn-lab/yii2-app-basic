@@ -42,6 +42,9 @@ $config = [
         'migrate' => [ // Fixture generation command line.
 			'class'=>'isnlab\common\commands\IsnBaseMigrateController',
         ],
+        'message' => [
+	        'class' => 'isnlab\common\commands\IsnBaseMessageController',
+        ],
     ],
 
 ];
