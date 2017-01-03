@@ -23,6 +23,17 @@ $config = [
 		    'thousandSeparator' => ' ',
 		    'currencyCode' => 'RUR',
 	    ],
+	    /*'urlManager'                  => [
+		    'baseUrl' => 'https://webimama.ru',
+		    'enablePrettyUrl'     => true,
+		    'showScriptName'      => false,
+		    'enableStrictParsing' => false,
+		    'rules'               => [
+			    '<controller:\w+>/<action:\w+>/<id:\d+>'                  => '<controller>/<action>',
+			    '<controller:\w+>/<action:\w+>'                           => '<controller>/<action>',
+			    '<controller:\w+>'                                        => '<controller>/index',
+		    ],
+	    ],*/
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
