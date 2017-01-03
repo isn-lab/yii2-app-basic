@@ -11,6 +11,8 @@
 			'formatter' => [
 				'dateFormat'     => 'd.MM.Y',
 				'timeFormat'     => 'H:mm:ss',
+				'defaultTimeZone' => 'UTC',
+				'timeZone' => 'UTC',
 				'datetimeFormat' => 'd.MM.Y H:mm',
 			],
 			'request'   => [
