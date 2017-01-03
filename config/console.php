@@ -15,9 +15,12 @@ $config = [
     'timeZone'   => 'Europe/Moscow',
     'components' => [
 	    'formatter'            => [
-		    'dateFormat'     => 'd.MM.Y',
-		    'timeFormat'     => 'H:mm:ss',
-		    'datetimeFormat' => 'd.MM.Y H:mm',
+		    'dateFormat' => 'dd.MM.yyyy',
+		    'datetimeFormat' => 'dd.MM.yyyy HH:mm:ss',
+		    'timeZone' => 'Europe/Moscow',
+		    'decimalSeparator' => ',',
+		    'thousandSeparator' => ' ',
+		    'currencyCode' => 'RUR',
 	    ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
