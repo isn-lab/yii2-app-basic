@@ -24,6 +24,7 @@
     "yiisoft/yii2-bootstrap": "*",
     "yiisoft/yii2-swiftmailer": "*",
     "isnlab/yii2-isn-common": "dev-master",
+    "isnlab/yii2-isn-admin": "dev-master",
     "isnlab/yii2-isn-auth": "dev-master"
   },
   "require-dev": {
