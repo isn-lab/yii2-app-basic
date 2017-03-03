@@ -8,6 +8,7 @@
 	 */
 	namespace app\common;
 
+	use app\traits\BaseControllersTrait;
 	use isnlab\auth\common\CController;
 	use Yii;
 
@@ -17,22 +18,7 @@
 	 */
 	class WCController extends CController {
 
-		/**
-		 * @var bool
-		 */
-		public $isHome = false;
-		/**
-		 * @var bool
-		 */
-		public $showBreadCrumbs = true;
-		/**
-		 * @var bool
-		 */
-		public $showFooter = true;
-		/**
-		 * @var bool
-		 */
-		public $showSlider = false;
+		use BaseControllersTrait;
 
 
 	}

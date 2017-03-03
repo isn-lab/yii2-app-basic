@@ -69,6 +69,7 @@
   },
   "repositories": [
     { "type": "vcs", "url": "https://svn.isnlab.com/scm/svn/isnlab_packages/yii2/common" },
+    { "type": "vcs", "url": "https://svn.isnlab.com/scm/svn/isnlab_packages/yii2/admin" },
     { "type": "vcs", "url": "https://svn.isnlab.com/scm/svn/isnlab_packages/yii2/auth" }
   ]
 }
