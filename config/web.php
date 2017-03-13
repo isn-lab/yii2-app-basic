@@ -56,6 +56,7 @@
 			*/
 		],
 		'params'     => $params,
+		'aliases'    => require( __DIR__ . '/aliases.php' ),
 	];
 
 	if ( YII_ENV_DEV ) {
