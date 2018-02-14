@@ -20,9 +20,10 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=5.4.0",
-    "yiisoft/yii2": ">=2.0.5",
+    "yiisoft/yii2": ">=2.0.10",
     "yiisoft/yii2-bootstrap": "*",
     "yiisoft/yii2-swiftmailer": "*",
+    "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable",
     "isnlab/yii2-isn-common": "dev-master",
     "isnlab/yii2-isn-admin": "dev-master",
     "isnlab/yii2-isn-auth": "dev-master"
