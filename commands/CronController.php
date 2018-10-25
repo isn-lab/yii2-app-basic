@@ -10,6 +10,3 @@
 
 	class CronController extends \isnlab\common\commands\CronController
 	{}
-
-
-	?>
