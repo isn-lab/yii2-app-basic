@@ -29,10 +29,6 @@
     "isnlab/yii2-isn-auth": "dev-master"
   },
   "require-dev": {
-    "codeception/codeception" : ">=2.0.4",
-    "codeception/specify" : "*",
-    "codeception/verify" : "*",
-    "yiisoft/yii2-codeception": "*",
     "yiisoft/yii2-debug": "*",
     "yiisoft/yii2-gii": "*",
     "yiisoft/yii2-faker": "*"
