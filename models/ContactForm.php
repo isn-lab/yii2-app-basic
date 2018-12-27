@@ -61,7 +61,7 @@
 				$fromEmail = Yii::$app->params['fromEmail'];
 
 				/** @var Mailer $mailer */
-				$mailer = CommonFunc::getValidatedService(MailerService::className());
+				$mailer = CommonFunc::getValidatedService(MailerService::class);
 
 				$mailer->compose('contact', ['model' => $this])
 				       ->setTo($email)

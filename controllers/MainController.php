@@ -5,8 +5,6 @@
 	use app\common\WCController;
 	use isnlab\auth\models\LoginForm;
 	use Yii;
-	use yii\filters\AccessControl;
-	use yii\web\Controller;
 	use yii\filters\VerbFilter;
 	use app\models\ContactForm;
 
@@ -23,7 +21,7 @@
 		{
 			return [
 				'verbs' => [
-					'class' => VerbFilter::className(),
+					'class' => VerbFilter::class,
 					'actions' => [
 						'logout' => ['post'],
 					],
@@ -86,7 +84,7 @@
 		public function actionContact()
 		{
 			$model = new ContactForm();
-			if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+			if ($model->load(Yii::$app->request->post()) && $model->contact()) {
 				Yii::$app->session->setFlash('contactFormSubmitted');
 
 				return $this->refresh();

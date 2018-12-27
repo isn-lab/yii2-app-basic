@@ -1,6 +1,8 @@
 <?php
 
-Yii::setAlias('@tests', dirname(__DIR__) . '/tests/codeception');
+	use isnlab\common\CommonConst;
+
+	//Yii::setAlias( '@tests', dirname( __DIR__) . '/tests/codeception');
 
 $params = require(__DIR__ . '/params.php');
 $db = require(__DIR__ . '/db.php');
@@ -10,7 +12,7 @@ $config = [
     'language'       => 'ru-RU',
     'sourceLanguage' => 'ru-RU',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', CommonConst::COM_MANAGER => CommonConst::COM_MANAGER],
     'controllerNamespace' => 'app\commands',
     'timeZone'   => 'Europe/Moscow',
     'components' => [
@@ -50,17 +52,27 @@ $config = [
             ],
         ],
         'db' => $db,
+	    CommonConst::COM_MANAGER => [
+		    'class'         => 'isnlab\common\Manager',
+		    'enable'        => true,
+		    'eventHandlers' => [
+			    'isnlab\auth\secure\SecureEventHandler',
+			    'isnlab\common\events\MetaEventsHandler',
+			    //'app\events\RegistrationEventHandler',
+		    ],
+		    'controllers'  => [
+			    'migrate' => [
+				    'class' => 'isnlab\common\commands\IsnBaseMigrateController',
+				    //'useRemoteRepos' => false,
+				    //'responseClientTransport' => 'yii\httpclient\StreamTransport',
+				    'migrationLookup' => [
+					    //'@app/modules/online/migrations',
+				    ],
+			    ],
+		    ],
+	    ],
     ],
     'params' => $params,
-
-    'controllerMap' => [
-        'migrate' => [ // Fixture generation command line.
-			'class'=>'isnlab\common\commands\IsnBaseMigrateController',
-        ],
-        'message' => [
-	        'class' => 'isnlab\common\commands\IsnBaseMessageController',
-        ],
-    ],
 
 ];
 
