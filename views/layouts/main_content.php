@@ -2,11 +2,10 @@
 
 	/* @var $this \yii\web\View */
 	/* @var $content string */
-	/** @var $controller \app\common\WCController */
+	/** @var $controller WCController */
 
-	use yii\helpers\Html;
-	use yii\bootstrap\Nav;
-	use yii\bootstrap\NavBar;
+    use app\common\WCController;
+    use yii\helpers\Html;
 	use yii\widgets\Breadcrumbs;
 	use app\assets\AppAsset;
 

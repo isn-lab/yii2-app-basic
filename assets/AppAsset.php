@@ -1,38 +1,38 @@
 <?php
 /**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * Copyright (c) 2020.
+ * ISNLab
+ * Sedov Sergey
  */
 
 namespace app\assets;
 
-use yii\web\AssetBundle;
+    use yii\web\AssetBundle;
 
-/**
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
- */
-class AppAsset extends AssetBundle
-{
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
-    public $css = [
-        //'css/site.css',
-    ];
-    public $js = [
-    ];
-    public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
-        'app\assets\BaseThemeAsset'
-    ];
+    /**
+     * Class AppAsset
+     * @package app\assets
+     */
+    class AppAsset extends AssetBundle
+    {
+        public $basePath = '@webroot';
+        public $baseUrl = '@web';
 
-	public static function register($view)
-	{
-		//<link rel="shortcut icon" href="/images/favicon.png" type="image/png">
-		$view->registerLinkTag(['rel'=>'shortcut icon', 'href' => '/favicon.png', 'type' => 'image/png']);
+        public $depends = [
+            'yii\web\YiiAsset',
+            'yii\bootstrap\BootstrapAsset',
+            'app\assets\BaseThemeAsset',
+        ];
 
-		return parent::register($view);
-	}
-}
+        /**
+         * @param \yii\web\View $view
+         *
+         * @return AppAsset
+         */
+        public static function register($view)
+        {
+            //<link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+            $view->registerLinkTag(['rel' => 'shortcut icon', 'href' => '/favicon.png', 'type' => 'image/png']);
+            return parent::register($view);
+        }
+    }

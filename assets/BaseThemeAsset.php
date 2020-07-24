@@ -1,33 +1,45 @@
 <?php
     /**
- * Created by ISNLab.
- * User: Sedov Sergey
- * Date: 16.04.2016
- * Time: 0:56
- * Comment: 
- */    
-    namespace app\assets;
-    
-    use yii\web\AssetBundle;
- 
-    class BaseThemeAsset extends AssetBundle {
+     * Created by ISNLab.
+     * User: Sedov Sergey
+     * Date: 16.04.2016
+     * Time: 0:56
+     * Comment:
+     */
 
+    namespace app\assets;
+
+    use yii\web\AssetBundle;
+
+    /**
+     * Class BaseThemeAsset
+     * @package app\assets
+     */
+    class BaseThemeAsset extends AssetBundle
+    {
+
+        /**
+         * @var string
+         */
         public $sourcePath = '@app/theme/';
-        //public $basePath = '@webroot';
-        //public $baseUrl = '@web';
-    
+
+        /**
+         * @var string[]
+         */
         public $css = [
             'css/site.css',
         ];
-        public $js = [
-            //'js/js.min.js',
-        ];
-        //public $jsOptions = ['position' => \yii\web\View::POS_END];
-    
+
+        /**
+         * @var array
+         */
         public $publishOptions = [
-            'forceCopy' => YII_DEBUG, //no cache
+            'forceCopy' => YII_ENV_DEV, //no cache
         ];
-    
+
+        /**
+         * @var string[]
+         */
         public $depends = [
             'yii\web\JqueryAsset',
             'yii\web\YiiAsset',
@@ -37,6 +49,3 @@
             'isnlab\common\assets\MagnificPopupAsset',
         ];
     }
-
-
-?>

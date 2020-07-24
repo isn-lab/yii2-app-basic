@@ -10,11 +10,18 @@
 
 	use app\traits\BaseControllersTrait;
 
-	class ContentController extends \isnlab\mods\content\controllers\ContentController {
+    /**
+     * Class ContentController
+     * @package app\controllers
+     */
+    class ContentController extends \isnlab\mods\content\controllers\ContentController {
 
 		use BaseControllersTrait;
 
-		public function init() {
+        /**
+         * Init
+         */
+        public function init() {
 			parent::init();
 
 			$this->showBreadCrumbs = true;
@@ -22,6 +29,3 @@
 
 
 	}
-
-
-	?>

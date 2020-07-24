@@ -10,5 +10,3 @@
 		//Sample:
 		//'@customalias' => '@app/path/to/dir',
 	];
-
-?>
